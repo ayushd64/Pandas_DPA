@@ -27,7 +27,7 @@ class Plots(Optimization):
     def position_plot(self):
         self.team_plot()
         self.dict = {'GK':'Goal-keeper', 'ST':'Striker', 'RW':'Right winger', 'LWB':'Left Wing Back', 'RWB':'Right Wing Back',
-                    'LB':'Left back', 'CF':'Center forward', 'CDM':'Central defensive midfielder', 'CB':'Centre back',
+                    'LB':'Left back', 'CF':'Centre forward', 'CDM':'Central defensive midfielder', 'CB':'Centre back',
                     'CAM':'Central attacking midfielder', 'RM':'Right midfielder', 'CM':'Centre midfielder', 'LW':'Left winger',
                     'LM':'Left midfielder', 'RB':'Right back'}
         for i in self.my_team["Position"]:
