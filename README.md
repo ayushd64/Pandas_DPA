@@ -6,3 +6,4 @@
 4. After Step-3, open the jupyter notebook in the project directory.
 5. Then execute this command in your jupyter notebook: '%run Master.py'
 6. Congratulations, project has been successfully executed.
+Note: raw_dats.csv file is our 2020 fifa data.
