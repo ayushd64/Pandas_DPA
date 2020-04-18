@@ -49,12 +49,8 @@ class Optimization(ML):
     # Selecting best team within a budget.
     def taking_team(self):
         self.top_team = self.top_teams()
-        self.mark_val = self.top_team.groupby("Team").sum()
-        self.mark_val.sort_values('Market_value', ascending=False)
         
-        # Filtering all the teams with total market value less than 500000000.
-        self.mark_val[self.mark_val["Market_value"]<500000000].sort_values("Predicted Overall Rating", ascending=False)
-        
+        # Manager has total budget of 440000000.
         self.playing_13 = self.top_team.groupby("Team").agg({'Market_value':'sum', 'Predicted Overall Rating':'mean'})
         self.playing_13 = self.playing_13.sort_values("Predicted Overall Rating", ascending=False)
         
