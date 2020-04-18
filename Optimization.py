@@ -78,7 +78,7 @@ class Optimization(ML):
         self.display(self.my_team)
         return self.my_team, self.all_teams, self.best
     
-    # Swapping players to make my team more.
+    # Swapping players to make my team more good at standing.
     def swapping(self):
         self.al = self.my_teamm()
         self.mt = self.al[0]
