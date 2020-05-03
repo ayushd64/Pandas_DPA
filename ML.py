@@ -17,58 +17,69 @@ class ML(Train_Test_Split):
         self.test_dat = super().test_dat()
         
     
-    # will return Decision Tree model.
-    def decision_tree(self):        
-        from sklearn import tree
-        from sklearn.metrics import accuracy_score
-        self.clf = tree.DecisionTreeClassifier(criterion = "entropy", random_state = 2)
+    # will return Decision Tree Regressor model.
+    def decision_tree(self):
+        from sklearn.tree import DecisionTreeRegressor
+        from sklearn.metrics import r2_score,mean_squared_error
+        self.clf = DecisionTreeRegressor()
         self.clf.fit(self.xtrain, self.ytrain.values.ravel())
         self.clf_predict = self.clf.predict(self.xtest)
-        self.accuracy = accuracy_score(self.ytest, self.clf_predict)
-        return self.accuracy, self.clf_predict, self.clf
+        self.r_sq = r2_score(self.ytest, self.clf_predict)
+        self.mse = mean_squared_error(self.ytest, self.clf_predict)
+        self.rmse = self.np.sqrt(self.mse)
+        return self.clf_predict, self.clf, self.r_sq, self.rmse, self.mse
     
-    # will return Random Forest model.
+    # will return Random Forest Regressor model.
     def random_forest(self):
-        from sklearn.ensemble import RandomForestClassifier
-        from sklearn.metrics import accuracy_score
-        self.clf = RandomForestClassifier(random_state = 3000)
+        from sklearn.ensemble import RandomForestRegressor
+        from sklearn.metrics import r2_score,mean_squared_error
+        self.clf = RandomForestRegressor()
         self.clf.fit(self.xtrain, self.ytrain.values.ravel())
         self.clf_predict = self.clf.predict(self.xtest)
-        self.accuracy = accuracy_score(self.ytest, self.clf_predict)
-        return self.accuracy, self.clf_predict, self.clf
+        self.r_sq = r2_score(self.ytest, self.clf_predict)
+        self.mse = mean_squared_error(self.ytest, self.clf_predict)
+        self.rmse = self.np.sqrt(self.mse)
+        return self.clf_predict, self.clf, self.r_sq, self.rmse, self.mse
     
-    # will return Random Forest model.
+    # will return Support Vector Machine(SVM) model.
     def svm(self):
-        from sklearn import svm
-        from sklearn.metrics import accuracy_score
-        self.clf = svm.SVC()
+        from sklearn.svm import SVR
+        from sklearn.metrics import r2_score,mean_squared_error
+        self.clf = SVR()
         self.clf.fit(self.xtrain, self.ytrain.values.ravel())
         self.clf_predict = self.clf.predict(self.xtest)
-        self.accuracy = accuracy_score(self.ytest, self.clf_predict)
-        return self.accuracy, self.clf_predict, self.clf
+        self.r_sq = r2_score(self.ytest, self.clf_predict)
+        self.mse = mean_squared_error(self.ytest, self.clf_predict)
+        self.rmse = self.np.sqrt(self.mse)
+        return self.clf_predict, self.clf, self.r_sq, self.rmse, self.mse
     
-    # will return K-Nearest Neighbor model.
-    def knn(self):
-        from sklearn.neighbors import KNeighborsClassifier
-        from sklearn.metrics import accuracy_score
-        self.clf = KNeighborsClassifier(n_neighbors=50)
+    # will return Linear Regression model.
+    def lr(self):
+        from sklearn.linear_model import LinearRegression
+        from sklearn.metrics import r2_score,mean_squared_error
+        self.clf = LinearRegression()
         self.clf.fit(self.xtrain, self.ytrain.values.ravel())
         self.clf_predict = self.clf.predict(self.xtest)
-        self.accuracy = accuracy_score(self.ytest, self.clf_predict)
-        return self.accuracy, self.clf_predict, self.clf
+        self.r_sq = r2_score(self.ytest, self.clf_predict)
+        self.mse = mean_squared_error(self.ytest, self.clf_predict)
+        self.rmse = self.np.sqrt(self.mse)
+        return self.clf_predict, self.clf, self.r_sq, self.rmse, self.mse
     
     # will return the best out of 4 models.
     def all_models(self):
         self.dict = {'Decision Tree': self.decision_tree(), 'Random Forest': self.random_forest(),
-                'Support vector machine(SVM)': self.svm(), 'K-Nearest Neighbor': self.knn()}
-        self.data = [["Decision Tree", self.dict["Decision Tree"][0]], ["Random Forest", self.dict["Random Forest"][0]],
-                    ["Support vector machine(SVM)", self.dict["Support vector machine(SVM)"][0]], ["K-Nearest Neighbor", self.dict["K-Nearest Neighbor"][0]]]
-        self.df = self.pd.DataFrame(self.data, columns = ["Model", "Accuracy"])
-        self.d = self.df.style.apply(lambda x: ['background: lightblue' if i == max(self.df["Accuracy"]) else '' for i in self.df["Accuracy"]])
-        self.best_model = self.dict[self.df[self.df["Accuracy"] == max(self.df["Accuracy"])]["Model"].values[0]]
-        self.bm = self.best_model[2]
+                'Support vector machine(SVM)': self.svm(), 'Linear Regression': self.lr()}
+        self.model = ["Decision Tree", "Random Forest", "Support vector machine(SVM)", "Linear Regression"] 
+        self.rmse = [self.dict['Decision Tree'][3], self.dict['Random Forest'][3], self.dict['Support vector machine(SVM)'][3], self.dict['Linear Regression'][3]]
+        self.rsq = [self.dict['Decision Tree'][2], self.dict['Random Forest'][2], self.dict['Support vector machine(SVM)'][2], self.dict['Linear Regression'][2]]
+        self.mse = [self.dict['Decision Tree'][4], self.dict['Random Forest'][4], self.dict['Support vector machine(SVM)'][4], self.dict['Linear Regression'][4]]
+        self.data = {'Model':self.model, 'RMSE':self.rmse, "R-square":self.rsq, "MSE":self.mse}
+        self.df = self.pd.DataFrame(self.data)
+        self.d = self.df.style.apply(lambda x: ['background: lightblue' if i == min(self.df["RMSE"]) else '' for i in self.df["RMSE"]])
+        self.best_model = self.dict[self.df[self.df["RMSE"] == min(self.df["RMSE"])]["Model"].values[0]]
+        self.bm = self.best_model[1]
         self.display(self.d)
-        return self.best_model[2]
+        return self.best_model[1]
     
     # saves the best model in the local system as .pkl file.
     # Initially we are not saving it as it requires around 2.3 GB of storage to store the model, but you can save it using the function save_best_model
@@ -86,10 +97,14 @@ class ML(Train_Test_Split):
     
     # return the predicted rating of the test data.
     def after_predictions(self):
+        import math
+        import numpy as np
         # remove the below comment if you want to save the model in your current working directory.
         # self.save_best_model()
         self.predict = self.all_models().predict(self.xtest)
-        self.xtest.insert(10, "Predicted Overall Rating", self.predict)
+        self.roun = self.np.round(self.predict)
+        self.integ = self.roun.astype(int)
+        self.xtest.insert(10, "Predicted Overall Rating", self.integ)
         self.xtest.insert(11, "Actual Overall Rating", self.ytest)
         self.xtest.insert(1, "Name", self.test_dat["Name"].values)
         self.xtest.insert(2, "Team", self.test_dat["Team"].values)
