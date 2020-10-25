@@ -1,4 +1,4 @@
-**Abstract**
+*Abstract*
 
 The main focus of this paper is to showcase the soccer analysis done by leveraging two datasets. The most fan clubs are associated with soccer and there’s a huge revenue made in this area of sports. If a manager wants to buy out a European league team, within a given budget, we try to help this new manager invest his money with the best possible team along with five swaps at max to make the team even better. We filtered out teams having an overall average rating above 75% from the primary dataset [sofifa dataset](https://sofifa.com/), which is the qualifying criteria. We picked the best possible team in the given budget. To further make sure the team with the best overall ratings really has the best players, we use the remaining amount to swap our players with the better ones from the other teams. We consider a few features variables from the secondary data set to improve the model efficiency. 
 
@@ -27,5 +27,37 @@ What Data Sources are we using?<br>
 - We start by web scraping the data from html tables from our primary datasource, using-beautifulsoup4, BS4, HTML5lib, requests, URLlib3, web-encoddings.<br>
 - Each predictor variable (columns) are then stored into an array.<br>
 - This array is converted into a dataframe and the data frame is then pushed into the .csv files.<br>
+
+
+**1.3 Data Understanding, Cleaning and Preparation:**
+
+*Predictor Variables* 
+Age
+Name
+Team
+Best Overall
+Position 
+Attacking stats
+Movement stats 
+Goalkeeper stats
+Power stats
+Defense stats
+Skill sets 
+Total potential 
+market value
+Wage
+Predicted overall rating
+Actual overall rating
+
+Used for the model: [["Age", "Best Overall", "Attacking stats", "Movement stats", "Power stats", "Defense stats", "Skill sets", "Total potential", "Market_value", "Wage"]]
+
+Various approaches for data cleaning
+We first read the CSV files consisting of all data from years, 2009-2019.
+Duplicate Entries: Removing Duplicates by Key - Player ID.
+Missing Values: Drop unnamed columns
+Units- ‘Wage’, ‘market_value’ columns have units in M (10,00000) and K (1,000). We converted from alpha-numeric to numeric values.
+Alpha Numeric Values: Remove Columns such as ‘Team’, ‘Name’, ‘Position’
+Table Joins (Primary and Secondary dataset)- By Player ID
+We dropped the rows which had ‘market_value’=0 and ‘Wage’=0
 
 
