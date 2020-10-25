@@ -87,7 +87,7 @@ Some of the plots include:
 
 
 
-  (https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%201.png)
+  ![Image of plot](https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%201.png)
 Fig 4: Age vs Avg. Power stats                                   Fig 5: Age vs Avg. Skill sets
 
 
