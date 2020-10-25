@@ -1,4 +1,4 @@
-****Abstract****
+# Abstract
 
 The main focus of this paper is to showcase the soccer analysis done by leveraging two datasets. The most fan clubs are associated with soccer and there’s a huge revenue made in this area of sports. If a manager wants to buy out a European league team, within a given budget, we try to help this new manager invest his money with the best possible team along with five swaps at max to make the team even better. We filtered out teams having an overall average rating above 75% from the primary dataset [sofifa dataset](https://sofifa.com/), which is the qualifying criteria. We picked the best possible team in the given budget. To further make sure the team with the best overall ratings really has the best players, we use the remaining amount to swap our players with the better ones from the other teams. We consider a few features variables from the secondary data set to improve the model efficiency. 
 
