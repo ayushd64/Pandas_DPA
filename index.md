@@ -31,33 +31,33 @@ What Data Sources are we using?<br>
 
 ### 1.3 Data Understanding, Cleaning and Preparation:
 
-*Predictor Variables* 
-Age
-Name
-Team
-Best Overall
-Position 
-Attacking stats
-Movement stats 
-Goalkeeper stats
-Power stats
-Defense stats
-Skill sets 
-Total potential 
-market value
-Wage
-Predicted overall rating
-Actual overall rating
-
+*Predictor Variables* <br>
+Age <br>
+Name <br>
+Team <br>
+Best Overall <br>
+Position  <br>
+Attacking stats <br>
+Movement stats <br> 
+Goalkeeper stats <br>
+Power stats <br>
+Defense stats <br>
+Skill sets <br> 
+Total potential <br> 
+market value <br>
+Wage <br>
+Predicted overall rating <br>
+Actual overall rating <br>
+ <br>
 Used for the model: [["Age", "Best Overall", "Attacking stats", "Movement stats", "Power stats", "Defense stats", "Skill sets", "Total potential", "Market_value", "Wage"]]
-
-Various approaches for data cleaning
-We first read the CSV files consisting of all data from years, 2009-2019.
-Duplicate Entries: Removing Duplicates by Key - Player ID.
-Missing Values: Drop unnamed columns
-Units- ‘Wage’, ‘market_value’ columns have units in M (10,00000) and K (1,000). We converted from alpha-numeric to numeric values.
-Alpha Numeric Values: Remove Columns such as ‘Team’, ‘Name’, ‘Position’
-Table Joins (Primary and Secondary dataset)- By Player ID
-We dropped the rows which had ‘market_value’=0 and ‘Wage’=0
+ <br>
+Various approaches for data cleaning <br>
+- We first read the CSV files consisting of all data from years, 2009-2019. <br>
+- Duplicate Entries: Removing Duplicates by Key - Player ID. <br>
+- Missing Values: Drop unnamed columns <br>
+- Units- ‘Wage’, ‘market_value’ columns have units in M (10,00000) and K (1,000). We converted from alpha-numeric to numeric values. <br>
+- Alpha Numeric Values: Remove Columns such as ‘Team’, ‘Name’, ‘Position’ <br>
+- Table Joins (Primary and Secondary dataset)- By Player ID <br>
+- We dropped the rows which had ‘market_value’=0 and ‘Wage’=0 <br>
 
 
