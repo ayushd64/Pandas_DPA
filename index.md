@@ -73,14 +73,14 @@ Measures precisely in business terms the value of these data sets to their busin
 
 ## Secondary Data Set
 
-# How did we leverage it?
+### How did we leverage it?
 We used the ‘player‘ table from the database present in the link: link[https://www.kaggle.com/hugomathien/soccer]
 From the player table, we used the ‘birthday’ column to calculate the age.
 We joined the primary and secondary data sets on the ‘id’ column using the inner join.
 That’s how we leveraged the secondary data set in our problem statement. 
 
 
-## Data Analysis:
+### Data Analysis:
 
 This part includes plotting the data that we cleaned, before prediction, to analyse and make better predictions on our data.
 Some of the plots include:
@@ -101,7 +101,7 @@ Some of the plots include:
 
 
 
-# CONCLUSION:
+### CONCLUSION:
 
 From the above plots, we observed that age can be an important factor for our model.
 
