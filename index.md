@@ -3,7 +3,7 @@
 The main focus of this paper is to showcase the soccer analysis done by leveraging two datasets. The most fan clubs are associated with soccer and there’s a huge revenue made in this area of sports. If a manager wants to buy out a European league team, within a given budget, we try to help this new manager invest his money with the best possible team along with five swaps at max to make the team even better. We filtered out teams having an overall average rating above 75% from the primary dataset [sofifa dataset](https://sofifa.com/), which is the qualifying criteria. We picked the best possible team in the given budget. To further make sure the team with the best overall ratings really has the best players, we use the remaining amount to swap our players with the better ones from the other teams. We consider a few features variables from the secondary data set to improve the model efficiency. 
 
 
-****1.1 Problem Statement:****
+### 1.1 Problem Statement:
 
 The objective of our algorithm is to maximize the team’s overall statistics by accumulating players with the highest ‘Ratings’ within the constrained budget.<br>
 1. The ‘sofifa’ dataset has extensive data. The first step includes gathering the required domain knowledge of the dataset<br>
@@ -15,7 +15,7 @@ The objective of our algorithm is to maximize the team’s overall statistics by
 7. We build a proprietary optimization algorithm to tackle our problem statement and predict the best team in the given budget.
 
 
-**1.2 Data Acquisition:**
+### 1.2 Data Acquisition:
 
 As we need to minimize the RMSE value of the model, hence we decided to use some supplementary source: [kaggle-soccer](https://www.kaggle.com/hugomathien/soccer).<br>
 
@@ -29,7 +29,7 @@ What Data Sources are we using?<br>
 - This array is converted into a dataframe and the data frame is then pushed into the .csv files.<br>
 
 
-****1.3 Data Understanding, Cleaning and Preparation:****
+### 1.3 Data Understanding, Cleaning and Preparation:
 
 *Predictor Variables* 
 Age
