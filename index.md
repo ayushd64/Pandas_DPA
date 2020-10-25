@@ -61,3 +61,60 @@ Various approaches for data cleaning <br>
 - We dropped the rows which had ‘market_value’=0 and ‘Wage’=0 <br>
 
 
+### 1.4 Exploratory Data Analysis
+
+#External data sources:
+
+link[https://sofifa.com/?hl=en-US&r=190075&set=true]
+
+link[https://www.kaggle.com/hugomathien/soccer]
+
+Measures precisely in business terms the value of these data sets to their business problem.
+
+#Secondary Data Set
+
+#How did we leverage it?
+We used the ‘player‘ table from the database present in the link: link[https://www.kaggle.com/hugomathien/soccer]
+From the player table, we used the ‘birthday’ column to calculate the age.
+We joined the primary and secondary data sets on the ‘id’ column using the inner join.
+That’s how we leveraged the secondary data set in our problem statement. 
+
+
+#Data Analysis:
+
+This part includes plotting the data that we cleaned, before prediction, to analyse and make better predictions on our data.
+Some of the plots include:
+
+
+
+  (https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%201.png)
+Fig 4: Age vs Avg. Power stats                                   Fig 5: Age vs Avg. Skill sets
+
+
+
+
+
+
+
+
+Fig 6: Age vs Avg. Total potential                                   	Fig 7: Age vs Avg. Best Overall
+
+
+               
+      
+Fig 8: Age vs Avg. Overall Rating                             Fig 9: Age vs Count of Age
+
+
+
+ 
+Fig 10: Age vs Avg. Defense stats
+
+
+
+
+
+CONCLUSION:
+
+From the above plots, we observed that age can be an important factor for our model.
+
+
