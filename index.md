@@ -85,29 +85,17 @@ That’s how we leveraged the secondary data set in our problem statement.
 This part includes plotting the data that we cleaned, before prediction, to analyse and make better predictions on our data.
 Some of the plots include:
 
+![Image of plot](https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%201.png)
+Fig 1: Age vs Count of Age<br>
+<br>
+![Image of plot](https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%205.png)
+Fig 2: Age vs Avg. Skill sets<br>
+<br>
+![Image of plot](https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%206.png)
+Fig 3: Age vs Avg. Power stats<br>
+<br>
 
-
-  ![Image of plot](https://github.com/ayushd64/Pandas_DPA/blob/master/before_prediction/Dashboard%201.png)
-Fig 4: Age vs Avg. Power stats                                   Fig 5: Age vs Avg. Skill sets
-
-
-
-
-
-
-
-
-Fig 6: Age vs Avg. Total potential                                   	Fig 7: Age vs Avg. Best Overall
-
-
-               
-      
-Fig 8: Age vs Avg. Overall Rating                             Fig 9: Age vs Count of Age
-
-
-
- 
-Fig 10: Age vs Avg. Defense stats
+     
 
 
 
