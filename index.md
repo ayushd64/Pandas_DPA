@@ -24,7 +24,7 @@ What Data Sources are we using?<br>
 - We identify the data from soFIFA(primary dataset) and Kaggle(secondary dataset) which includes more than 100,000 rows of players (before pre-processing) with 15 prediction   variables and a target variable of overall rating from years 2009-2019.<br>
 
 *Web Scraping:* <br>
-- We start by web scraping the data from html tables from our primary datasource, using-beautifulsoup4, BS4, HTML5lib, requests, URLlib3, webencoddings.<br>
+- We start by web scraping the data from html tables from our primary datasource, using-beautifulsoup4, BS4, HTML5lib, requests, URLlib3, web-encoddings.<br>
 - Each predictor variable (columns) are then stored into an array.<br>
 - This array is converted into a dataframe and the data frame is then pushed into the .csv files.<br>
 
