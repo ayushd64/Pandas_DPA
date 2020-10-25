@@ -17,12 +17,12 @@ The objective of our algorithm is to maximize the team’s overall statistics by
 
 **1.2 Data Acquisition:**
 
-As we need to minimize the RMSE value of the model, hence we decided to use some supplementary source: [kaggle-soccer](https://www.kaggle.com/hugomathien/soccer).
+As we need to minimize the RMSE value of the model, hence we decided to use some supplementary source: [kaggle-soccer](https://www.kaggle.com/hugomathien/soccer).<br>
 
-What Data Sources are we using?
-*Dataset:*
+What Data Sources are we using?<br>
+*Dataset:*<br>
 -> We identify the data from soFIFA(primary dataset) and Kaggle(secondary dataset) which includes more than 100,000 rows of players (before pre-processing) with 15 prediction variables and a target variable of overall rating from years 2009-2019. 
-*Web Scraping:* 
+*Web Scraping:* <br>
 -> We start by web scraping the data from html tables from our primary datasource, using-beautifulsoup4, BS4, HTML5lib, requests, URLlib3, webencoddings.
 -> Each predictor variable (columns) are then stored into an array.
 -> This array is converted into a dataframe and the data frame is then pushed into the .csv files.
